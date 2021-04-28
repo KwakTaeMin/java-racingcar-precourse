@@ -3,10 +3,10 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RaceCars {
+public class RacingCars {
 	private List<Car> cars;
 
-	public RaceCars() {
+	public RacingCars() {
 		this.cars = new ArrayList<>();
 	}
 
