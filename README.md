@@ -27,7 +27,6 @@
 
 # 경주에 참여할 자동차들 (RaceCars.class)
 * 자동차 추가 기능
-  - String 입력 받아 쉼표(,)를 기준으로 구분
 * 자동차들 조회하기  
 
 # 경주(Racing.class)
@@ -37,6 +36,7 @@
 
 # 경주 주최자(RaceOrganizer.class)
 * 참여할 자동차 입력
+  - String 입력 받아 쉼표(,)를 기준으로 구분
 * 몇번 이동할 건지 입력 
 
 # 자동차 그리기(DrawCar.class) 
