@@ -17,26 +17,9 @@ public class CarTest {
 		String name = "benz";
 		Car car = new Car(name);
 		assertThat(car).isNotNull();
-		assertThat(car.getName()).isEqualTo(name);
+		CarName carName = new CarName(name);
+		assertThat(car.getCarName().getName()).isEqualTo(carName.getName());
 		assertThat(car.getPosition() ).isEqualTo(0);
-	}
-
-	@Test
-	@DisplayName("Car 초기화 이름 5글자 이상 불가 테스트")
-	public void initCarNameValidFiveMoreTest() {
-		assertThrows(InvalidCarNameLength.class, () -> {
-			String name = "abcdef";
-			Car car = new Car(name);
-		});
-	}
-
-	@Test
-	@DisplayName("Car 초기화 이름 0글자 이하 불가 테스트")
-	public void initCarNameValidZeoTest() {
-		assertThrows(InvalidCarNameLength.class, () -> {
-			String name = "";
-			Car car = new Car(name);
-		});
 	}
 
 	@Test
@@ -54,7 +37,7 @@ public class CarTest {
 	public void getCarNameTest() throws InvalidCarNameLength {
 		String name = "Benz";
 		Car car = new Car(name);
-		assertThat(car.getName()).isEqualTo("Benz");
+		assertThat(car.getCarName().getName()).isEqualTo(new CarName(name).getName());
 	}
 
 	@Test
