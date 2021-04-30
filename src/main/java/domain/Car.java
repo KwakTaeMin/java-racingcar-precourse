@@ -1,15 +1,18 @@
 package domain;
 
+import domain.interfaces.CarEngine;
 import exceptions.InvalidCarNameLength;
 
 public class Car {
 
 	private CarName name;
-	private int position;
+	private CarEngine engine;
 	private CarDraw draw;
+	private int position;
 
 	public Car(String name) throws InvalidCarNameLength {
 		this.name = new CarName(name);
+		this.engine = new CarRandomEngine();
 		this.draw = new CarDraw();
 		this.position = 0;
 	}
@@ -23,8 +26,10 @@ public class Car {
 	}
 
 	public void move() {
-		this.draw.drawMoving();
-		position++;
+		if (engine.isMove()) {
+			this.draw.drawMoving();
+			this.position++;
+		}
 	}
 
 	public String draw() {

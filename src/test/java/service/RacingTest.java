@@ -11,7 +11,7 @@ import domain.RaceOrganizer;
 import exceptions.InvalidCarNameLength;
 
 @DisplayName("Race 테스트")
-public class RaceTest {
+public class RacingTest {
 
 	@Test
 	@DisplayName("Race 클래스 초기화")
@@ -19,8 +19,8 @@ public class RaceTest {
 		RaceCars raceCars = new RaceCars();
 		int raceCount = 5;
 		RaceOrganizer raceOrganizer = new RaceOrganizer(raceCars, raceCount);
-		Race race = new Race(raceOrganizer);
-		assertThat(race).isNotNull();
+		Racing racing = new Racing(raceOrganizer);
+		assertThat(racing).isNotNull();
 	}
 
 	@Test
@@ -36,7 +36,7 @@ public class RaceTest {
 		raceCars.addCar(kia);
 		int raceCount = 5;
 		RaceOrganizer raceOrganizer = new RaceOrganizer(raceCars, raceCount);
-		Race race = new Race(raceOrganizer);
-		race.start();
+		Racing racing = new Racing(raceOrganizer);
+		racing.start();
 	}
 }

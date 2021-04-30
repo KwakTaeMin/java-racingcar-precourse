@@ -20,7 +20,7 @@ public class CarTest {
 		assertThat(car).isNotNull();
 		CarName carName = new CarName(name);
 		assertThat(car.getCarName().getName()).isEqualTo(carName.getName());
-		assertThat(car.getPosition() ).isEqualTo(0);
+		assertThat(car.getPosition()).isEqualTo(0);
 	}
 
 	@Test
@@ -31,7 +31,6 @@ public class CarTest {
 		car.move();
 		assertThat(car.getPosition()).isEqualTo(1);
 	}
-
 
 	@Test
 	@DisplayName("Car 이름 가져오기 테스트")
@@ -61,7 +60,8 @@ public class CarTest {
 	@Test
 	public void drawOneMoveTest() throws InvalidCarNameLength {
 		Car car = new Car("Benz");
-		car.move();
+		while (car.getPosition() != 1)
+			car.move();
 		String drawResult = car.draw();
 		Assertions.assertThat(drawResult).isEqualTo("Benz : -");
 	}
@@ -70,9 +70,8 @@ public class CarTest {
 	@Test
 	public void drawThreeMoveTest() throws InvalidCarNameLength {
 		Car car = new Car("Benz");
-		car.move();
-		car.move();
-		car.move();
+		while (car.getPosition() != 3)
+			car.move();
 		String drawResult = car.draw();
 		Assertions.assertThat(drawResult).isEqualTo("Benz : ---");
 	}
