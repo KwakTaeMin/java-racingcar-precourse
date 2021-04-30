@@ -1,6 +1,6 @@
 package domain;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,7 @@ public class RaceOrganizerTest {
 	@Test
 	public void initRaceOrganizerTest() {
 		RaceCars raceCars = new RaceCars();
-		RaceOrganizer raceOrganizer = new RaceOrganizer(raceCars , 5);
+		RaceOrganizer raceOrganizer = new RaceOrganizer(raceCars, 5);
 		assertThat(raceOrganizer).isNotNull();
 	}
 

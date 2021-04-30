@@ -2,8 +2,6 @@ package domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.List;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -34,7 +32,6 @@ public class RaceCarsTest {
 	public void getCarsTest() throws InvalidCarNameLength {
 		RaceCars raceCars = new RaceCars();
 		Car car = new Car("Benz");
-		List<Car> cars = raceCars.getCars();
 		raceCars.addCar(car);
 		assertThat(raceCars.getCars().size()).isEqualTo(1);
 	}

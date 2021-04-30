@@ -1,6 +1,6 @@
 package domain;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -27,7 +27,7 @@ public class CarTest {
 	public void moveCarTest() throws InvalidCarNameLength {
 		Car car = new Car("Benz");
 		assertThat(car.getPosition()).isEqualTo(0);
-		while(car.getPosition() != 1)
+		while (car.getPosition() != 1)
 			car.move();
 		assertThat(car.getPosition()).isEqualTo(1);
 	}

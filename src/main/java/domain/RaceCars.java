@@ -23,7 +23,7 @@ public class RaceCars {
 	public String toString() {
 		String stringCars = "";
 		for (Car car : this.cars)
-			stringCars += car.getCarName().toString()+ ", ";
+			stringCars += car.getCarName().toString() + ", ";
 		return stringCars.substring(0, stringCars.length() - 2);
 	}
 }

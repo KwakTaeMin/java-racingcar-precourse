@@ -24,7 +24,7 @@ public class Racing {
 		}
 	}
 
-	public RaceResult getResult(){
+	public RaceResult getResult() {
 		return new RaceResult(this.raceCars);
 	}
 

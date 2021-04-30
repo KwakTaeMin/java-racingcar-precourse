@@ -3,6 +3,7 @@ package domain;
 import exceptions.InvalidCarNameLength;
 
 public class CarName {
+
 	private static final int MIN_LENGTH = 0;
 	private static final int MAX_LENGTH = 5;
 
