@@ -1,8 +1,12 @@
 package service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import domain.Car;
 import domain.RaceCars;
 import domain.RaceOrganizer;
+import domain.RaceResult;
 
 public class Racing {
 
@@ -15,9 +19,13 @@ public class Racing {
 	}
 
 	public void start() {
-		for (int race = 0; race < raceCount; race++) {
+		for (int race = 0; race < this.raceCount; race++) {
 			race();
 		}
+	}
+
+	public RaceResult getResult(){
+		return new RaceResult(this.raceCars);
 	}
 
 	private void race() {
