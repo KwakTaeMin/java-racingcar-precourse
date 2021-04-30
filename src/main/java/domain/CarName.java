@@ -14,11 +14,12 @@ public class CarName {
 		this.name = name;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
 	private boolean validName(String name) {
 		return name.length() > MIN_LENGTH && name.length() <= MAX_LENGTH;
+	}
+
+	@Override
+	public String toString() {
+		return this.name;
 	}
 }

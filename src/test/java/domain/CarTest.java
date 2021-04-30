@@ -1,7 +1,6 @@
 package domain;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +18,7 @@ public class CarTest {
 		Car car = new Car(name);
 		assertThat(car).isNotNull();
 		CarName carName = new CarName(name);
-		assertThat(car.getCarName().getName()).isEqualTo(carName.getName());
+		assertThat(car.getCarName().toString()).isEqualTo(carName.toString());
 		assertThat(car.getPosition()).isEqualTo(0);
 	}
 
@@ -28,7 +27,8 @@ public class CarTest {
 	public void moveCarTest() throws InvalidCarNameLength {
 		Car car = new Car("Benz");
 		assertThat(car.getPosition()).isEqualTo(0);
-		car.move();
+		while(car.getPosition() != 1)
+			car.move();
 		assertThat(car.getPosition()).isEqualTo(1);
 	}
 
@@ -37,7 +37,7 @@ public class CarTest {
 	public void getCarNameTest() throws InvalidCarNameLength {
 		String name = "Benz";
 		Car car = new Car(name);
-		assertThat(car.getCarName().getName()).isEqualTo(new CarName(name).getName());
+		assertThat(car.getCarName().toString()).isEqualTo(new CarName(name).toString());
 	}
 
 	@Test

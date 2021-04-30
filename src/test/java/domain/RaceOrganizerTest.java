@@ -34,7 +34,7 @@ public class RaceOrganizerTest {
 		assertThat(raceOrganizer).isNotNull();
 		assertThat(raceOrganizer.getRaceCars()).isNotNull();
 		assertThat(raceOrganizer.getRaceCars().getCars()).isNotNull();
-		assertThat(raceOrganizer.getRaceCars().getCars().get(0).getCarName().getName()).isEqualTo("Benz");
+		assertThat(raceOrganizer.getRaceCars().getCars().get(0).getCarName().toString()).isEqualTo("Benz");
 		assertThat(raceOrganizer.getRaceCars().getCars().get(0).getPosition()).isEqualTo(0);
 		assertThat(raceOrganizer.getRaceCars().getCars().get(0).draw()).isEqualTo("Benz : ");
 	}

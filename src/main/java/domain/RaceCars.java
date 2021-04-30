@@ -18,4 +18,12 @@ public class RaceCars {
 	public List<Car> getCars() {
 		return this.cars;
 	}
+
+	@Override
+	public String toString() {
+		String stringCars = "";
+		for (Car car : this.cars)
+			stringCars += car.getCarName().toString()+ ", ";
+		return stringCars.substring(0, stringCars.length() - 2);
+	}
 }

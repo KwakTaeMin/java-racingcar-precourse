@@ -33,6 +33,6 @@ public class Car {
 	}
 
 	public String draw() {
-		return this.name.getName() + " : " + this.draw.getDrawing();
+		return this.name.toString() + " : " + this.draw.getDrawing();
 	}
 }
