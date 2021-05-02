@@ -6,8 +6,10 @@ import java.util.Scanner;
 import common.PrintMessage;
 import domain.Car;
 import domain.RaceCars;
+import domain.RaceCount;
 import domain.RaceOrganizer;
 import exceptions.InvalidCarNameLength;
+import exceptions.InvalidRaceCount;
 import service.Racing;
 
 public class RacingManager {
@@ -15,7 +17,7 @@ public class RacingManager {
 	private RaceCars raceCars;
 	private RaceOrganizer raceOrganizer;
 	private Racing racing;
-	private int raceCount;
+	private RaceCount raceCount;
 
 	private static RacingManager instance = new RacingManager();
 
@@ -57,12 +59,14 @@ public class RacingManager {
 
 	private void setRaceCount() {
 		try {
-			this.raceCount = inputRaceCount();
+			this.raceCount = new RaceCount(inputRaceCount());
 		} catch (InputMismatchException inputMismatchException) {
 			System.out.println(PrintMessage.INVALID_RACE_COUNT_MESSAGE);
 			setRaceCount();
+		} catch (InvalidRaceCount invalidRaceCount) {
+			System.out.println(invalidRaceCount.getMessage());
+			setRaceCount();
 		}
-
 	}
 
 	private void setRaceOrganizer() {

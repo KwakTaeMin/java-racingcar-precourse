@@ -3,9 +3,9 @@ package domain;
 public class RaceOrganizer {
 
 	private RaceCars raceCars;
-	private int raceCount;
+	private RaceCount raceCount;
 
-	public RaceOrganizer(RaceCars raceCars, int raceCount) {
+	public RaceOrganizer(RaceCars raceCars, RaceCount raceCount) {
 		this.raceCars = raceCars;
 		this.raceCount = raceCount;
 	}
@@ -14,7 +14,7 @@ public class RaceOrganizer {
 		return raceCars;
 	}
 
-	public int getRaceCount() {
+	public RaceCount getRaceCount() {
 		return raceCount;
 	}
 }

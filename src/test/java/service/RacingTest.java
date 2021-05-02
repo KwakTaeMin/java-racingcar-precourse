@@ -7,18 +7,20 @@ import org.junit.jupiter.api.Test;
 
 import domain.Car;
 import domain.RaceCars;
+import domain.RaceCount;
 import domain.RaceOrganizer;
 import domain.RaceResult;
 import exceptions.InvalidCarNameLength;
+import exceptions.InvalidRaceCount;
 
 @DisplayName("Racing 테스트")
 public class RacingTest {
 
 	@Test
 	@DisplayName("Racing 클래스 초기화")
-	public void initRaceTest() {
+	public void initRaceTest() throws InvalidRaceCount {
 		RaceCars raceCars = new RaceCars();
-		int raceCount = 5;
+		RaceCount raceCount = new RaceCount(5);
 		RaceOrganizer raceOrganizer = new RaceOrganizer(raceCars, raceCount);
 		Racing racing = new Racing(raceOrganizer);
 		assertThat(racing).isNotNull();
@@ -26,8 +28,9 @@ public class RacingTest {
 
 	@Test
 	@DisplayName("Racing start 테스트")
-	public void startRaceTest() throws InvalidCarNameLength {
+	public void startRaceTest() throws InvalidCarNameLength, InvalidRaceCount {
 		RaceCars raceCars = new RaceCars();
+		RaceCount raceCount = new RaceCount(5);
 		Car benz = new Car("Benz");
 		Car audi = new Car("Audi");
 		Car hyundai = new Car("Hyun");
@@ -36,7 +39,6 @@ public class RacingTest {
 		raceCars.addCar(audi);
 		raceCars.addCar(hyundai);
 		raceCars.addCar(kia);
-		int raceCount = 5;
 		RaceOrganizer raceOrganizer = new RaceOrganizer(raceCars, raceCount);
 		Racing racing = new Racing(raceOrganizer);
 		racing.start();
@@ -44,8 +46,9 @@ public class RacingTest {
 
 	@Test
 	@DisplayName("Racing getResult 테스트")
-	void getResultTest() throws InvalidCarNameLength {
+	void getResultTest() throws InvalidCarNameLength, InvalidRaceCount {
 		RaceCars raceCars = new RaceCars();
+		RaceCount raceCount = new RaceCount(5);
 		Car benz = new Car("Benz");
 		Car audi = new Car("Audi");
 		Car hyundai = new Car("Hyun");
@@ -54,7 +57,6 @@ public class RacingTest {
 		raceCars.addCar(audi);
 		raceCars.addCar(hyundai);
 		raceCars.addCar(kia);
-		int raceCount = 5;
 		RaceOrganizer raceOrganizer = new RaceOrganizer(raceCars, raceCount);
 		Racing racing = new Racing(raceOrganizer);
 		racing.start();
