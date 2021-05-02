@@ -1,5 +1,7 @@
 package domain;
 
+import common.PrintMessage;
+
 public class RaceResult {
 
 	private RaceCars raceCars;
@@ -14,7 +16,7 @@ public class RaceResult {
 	}
 
 	public String getWinMessage() {
-		return this.winCars.toString() + "가 최종 우승했습니다.";
+		return this.winCars.toString() + PrintMessage.WIN_CARS_MESSAGE;
 	}
 
 	private void winResult() {

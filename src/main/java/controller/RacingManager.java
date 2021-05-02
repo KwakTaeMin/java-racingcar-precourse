@@ -3,6 +3,7 @@ package controller;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import common.PrintMessage;
 import domain.Car;
 import domain.RaceCars;
 import domain.RaceOrganizer;
@@ -58,7 +59,7 @@ public class RacingManager {
 		try {
 			this.raceCount = inputRaceCount();
 		} catch (InputMismatchException inputMismatchException) {
-			System.out.println("숫자를 입력하여 주세요.");
+			System.out.println(PrintMessage.INVALID_RACE_COUNT_MESSAGE);
 			setRaceCount();
 		}
 
@@ -74,13 +75,13 @@ public class RacingManager {
 
 	private String inputCarNames() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("경주할 자동차 이름을 입력하세요(이름은 쉼표(,) 기준으로 구분)");
+		System.out.println(PrintMessage.INPUT_RACE_CARS_MESSAGE);
 		String inputCarNames = scanner.nextLine();
 		return inputCarNames;
 	}
 
 	private int inputRaceCount() {
-		System.out.println("시도할 회수는 몇회인가요?");
+		System.out.println(PrintMessage.INPUT_RACE_COUNT_MESSAGE);
 		Scanner scanner = new Scanner(System.in);
 		int inputRaceCount = scanner.nextInt();
 		return inputRaceCount;

@@ -1,5 +1,6 @@
 package domain;
 
+import common.PrintMessage;
 import exceptions.InvalidCarNameLength;
 
 public class CarName {
@@ -11,7 +12,7 @@ public class CarName {
 
 	public CarName(String name) throws InvalidCarNameLength {
 		if (!validName(name))
-			throw new InvalidCarNameLength("자동차 이름의 길이는 1이상 5이하의 문자열로 입력하여 주세요.");
+			throw new InvalidCarNameLength(PrintMessage.INVALID_RACE_CARS_MESSAGE);
 		this.name = name;
 	}
 
